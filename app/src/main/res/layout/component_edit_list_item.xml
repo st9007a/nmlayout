@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height">
+
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/item_name"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Group 1"
+        android:textSize="25sp"
+        />
+
+    <Button
+        android:background="@drawable/edit"
+        android:id="@+id/edit_btn"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
+        android:layout_height="@dimen/small_btn_height"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/remove_btn"
+        android:layout_width="@dimen/small_btn_width" />
+
+    <Button
+        android:background="@drawable/remove"
+        android:id="@+id/remove_btn"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
+        android:layout_height="@dimen/small_btn_height"
+        android:layout_marginRight="20dp"
+        android:layout_width="@dimen/small_btn_width"/>
+</RelativeLayout>

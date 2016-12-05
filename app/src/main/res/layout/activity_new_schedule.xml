@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="com.nm.nmlayout.nmlayout.NewScheduleActivity">
+
+    <LinearLayout
+        android:id="@+id/schedule_name_form"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/schedule_text_view"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:paddingLeft="@dimen/standard_padding"
+            android:text="Schedule Name :"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:ems="8"
+            android:id="@+id/editText"
+            android:inputType="textPersonName"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="Name"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/select_groups_text"
+        android:layout_below="@+id/schedule_name_form"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/standard_padding"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_width="wrap_content"
+        android:paddingLeft="@dimen/standard_padding"
+        android:text="Select Groups :"
+        android:textSize="20sp"/>
+
+    <fragment
+        android:id="@+id/fragment_select_list"
+        android:layout_above="@+id/buttons"
+        android:layout_below="@+id/select_groups_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:name="com.nm.nmlayout.nmlayout.SelectListFragment"
+
+        tools:layout="@layout/fragment_list_view"/>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/MenuBarStyle">
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_marginRight="1px"
+            android:text="Cancel"
+            style="@style/MenuBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_marginLeft="1px"
+            android:text="Next"
+            style="@style/MenuBarButtonStyle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

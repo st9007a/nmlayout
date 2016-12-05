@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registered_groups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="com.nm.nmlayout.nmlayout.SchedulePoliciesActivity">
+
+    <fragment
+        android:id="@+id/fragment_edit_schedule"
+        android:layout_above="@+id/buttons"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:name="com.nm.nmlayout.nmlayout.EditListFragment"
+        tools:layout="@layout/fragment_list_view"/>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/MenuBarStyle">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:text="Back"
+            style="@style/MenuBarButtonStyle"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
