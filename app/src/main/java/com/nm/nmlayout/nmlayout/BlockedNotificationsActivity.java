@@ -9,8 +9,9 @@ import android.widget.Button;
 
 public class BlockedNotificationsActivity extends AppCompatActivity {
 
-    private Button clearBtn;
-    private Button backBtn;
+    private Button historyBtn;
+    private Button groupBtn;
+    private Button scheduleBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +19,11 @@ public class BlockedNotificationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blocked_notifications);
         setTitle("Blocked Notifications");
 
-        clearBtn = (Button)findViewById(R.id.clear_btn);
-        backBtn = (Button)findViewById(R.id.back_btn);
+        historyBtn = (Button)findViewById(R.id.history_btn);
+        groupBtn = (Button)findViewById(R.id.group_btn);
+        scheduleBtn = (Button)findViewById(R.id.schedule_btn);
 
-        backBtn.setOnClickListener(new Button.OnClickListener() {
+        historyBtn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -30,6 +32,17 @@ public class BlockedNotificationsActivity extends AppCompatActivity {
                 BlockedNotificationsActivity.this.finish();
             }
         });
+
+        scheduleBtn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(BlockedNotificationsActivity.this, SchedulePoliciesActivity.class);
+                startActivity(intent);
+                BlockedNotificationsActivity.this.finish();
+            }
+        });
+
 
     }
 }

@@ -9,18 +9,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DebugActivity" />
-        <activity android:name=".HistoryActivity">
+        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".BlockedNotificationsActivity" />
+        <activity android:name=".SelectGroupActivity" />
+        <activity android:name=".SchedulePoliciesActivity" />
+        <activity android:name=".NewScheduleActivity" />
+        <activity android:name=".RegisteredGroupsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BlockedNotificationsActivity" />
-        <activity android:name=".SelectGroupActivity" />
-        <activity android:name=".SchedulePoliciesActivity" />
-        <activity android:name=".NewScheduleActivity" />
-        <activity android:name=".RegisteredGroupsActivity"></activity>
     </application>
 
 </manifest>

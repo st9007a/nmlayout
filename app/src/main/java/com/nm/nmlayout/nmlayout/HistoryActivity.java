@@ -9,9 +9,8 @@ import android.widget.ListView;
 
 public class HistoryActivity extends AppCompatActivity {
 
-    private Button groupBtn;
-    private Button scheduleBtn;
-    private Button blockedBtn;
+
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,21 +18,8 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
         setTitle("3Day Notifications");
 
-        groupBtn = (Button)findViewById(R.id.group_btn);
-        scheduleBtn = (Button)findViewById(R.id.schedule_btn);
-        blockedBtn = (Button)findViewById(R.id.blocked_btn);
-
-        scheduleBtn.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(HistoryActivity.this, SchedulePoliciesActivity.class);
-                startActivity(intent);
-                HistoryActivity.this.finish();
-            }
-        });
-
-        blockedBtn.setOnClickListener(new Button.OnClickListener() {
+        backBtn = (Button)findViewById(R.id.back_btn);
+        backBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -42,5 +28,7 @@ public class HistoryActivity extends AppCompatActivity {
                 HistoryActivity.this.finish();
             }
         });
+
+
     }
 }

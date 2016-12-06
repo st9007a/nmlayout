@@ -21,15 +21,22 @@
         style="@style/MenuBarStyle">
 
         <Button
-            android:id="@+id/back_btn"
+            android:id="@+id/group_btn"
             android:layout_marginRight="1px"
-            android:text="Back"
+            android:text="Group"
             style="@style/MenuBarButtonStyle"/>
 
         <Button
-            android:id="@+id/clear_btn"
+            android:id="@+id/schedule_btn"
             android:layout_marginLeft="1px"
-            android:text="Clear"
+            android:layout_marginRight="1px"
+            android:text="Schedule"
+            style="@style/MenuBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/history_btn"
+            android:layout_marginLeft="1px"
+            android:text="History"
             style="@style/MenuBarButtonStyle"/>
     </LinearLayout>
 

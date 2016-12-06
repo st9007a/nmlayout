@@ -3,7 +3,7 @@ package com.nm.nmlayout.nmlayout;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,17 @@ public class AppListFragment extends Fragment {
     private ListView mListView;
     private List<App> appList = new ArrayList<App>();
     private AppAdapter adapter;
+
+    public static AppListFragment newInstance(int position) {
+
+        //set up fragment template !! important !!
+        
+        AppListFragment f = new AppListFragment();
+        Bundle b = new Bundle();
+        b.putInt("position", position);
+        f.setArguments(b);
+        return f;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_view, container, false);

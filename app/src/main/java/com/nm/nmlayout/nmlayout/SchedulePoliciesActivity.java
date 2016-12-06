@@ -24,7 +24,7 @@ public class SchedulePoliciesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(SchedulePoliciesActivity.this, HistoryActivity.class);
+                intent.setClass(SchedulePoliciesActivity.this, BlockedNotificationsActivity.class);
                 startActivity(intent);
                 SchedulePoliciesActivity.this.finish();
             }
