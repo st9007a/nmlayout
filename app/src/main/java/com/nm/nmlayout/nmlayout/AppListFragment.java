@@ -23,7 +23,7 @@ public class AppListFragment extends Fragment {
     public static AppListFragment newInstance(int position) {
 
         //set up fragment template !! important !!
-        
+
         AppListFragment f = new AppListFragment();
         Bundle b = new Bundle();
         b.putInt("position", position);

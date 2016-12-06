@@ -7,4 +7,9 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="registered_groups_dropdown">
+        <item>New App Group</item>
+        <item>New Notification Group</item>
+    </string-array>
 </resources>
