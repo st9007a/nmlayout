@@ -21,6 +21,17 @@ public class EditListFragment extends Fragment {
     private List<String> groups = new ArrayList<String>();
     private EditListAdapter adapter;
 
+    public static EditListFragment newInstance(int position) {
+
+        //set up fragment template !! important !!
+
+        EditListFragment f = new EditListFragment();
+        Bundle b = new Bundle();
+        b.putInt("position", position);
+        f.setArguments(b);
+        return f;
+    }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_view, container, false);
 

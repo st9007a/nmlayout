@@ -81,7 +81,7 @@ public class RegisteredGroupsActivity extends AppCompatActivity {
         public int getCount() { return tabTitles.length; }
 
         @Override
-        public Fragment getItem(int position) { return AppListFragment.newInstance(position); }
+        public Fragment getItem(int position) { return EditListFragment.newInstance(position); }
     }
 
 }

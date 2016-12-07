@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:name="com.nm.nmlayout.nmlayout.NotificationListFragment"
+        class="com.nm.nmlayout.nmlayout.NotificationListFragment"
         tools:layout="@layout/fragment_list_view" />
 
     <LinearLayout

@@ -1,6 +1,6 @@
 package com.nm.nmlayout.nmlayout;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,9 +17,31 @@ import java.util.List;
 
 public class NotificationListFragment extends Fragment {
 
+    public static final String APPEND_BUTTON_VISIBLE = "visible";
+
     private ListView mListView;
     private List<Notification> nList = new ArrayList<Notification>();
     private  NotificationAdapter adapter;
+
+    public interface handleFragmentUI {
+        public void setAppendBtnVisible(boolean b);
+    }
+
+    public static NotificationListFragment newInstance(boolean appendBtnVisible){
+        Bundle b = new Bundle();
+        b.putBoolean(APPEND_BUTTON_VISIBLE, appendBtnVisible);
+        NotificationListFragment frag = new NotificationListFragment();
+        frag.setArguments(b);
+        return frag;
+    }
+
+    public void updateView(boolean appendBtnVisible) {
+        for(int i = 0; i < adapter.getCount(); i++) {
+            Button appendBtn = (Button)adapter.getView(i, null, mListView).findViewById(R.id.append_btn);
+            appendBtn.setVisibility(
+                    appendBtnVisible ? View.VISIBLE : View.INVISIBLE);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +64,14 @@ public class NotificationListFragment extends Fragment {
         adapter = new NotificationAdapter(getActivity(), nList);
         mListView.setAdapter(adapter);
 
+        Bundle args = getArguments();
+        if(args != null) {
+            for (int i = 0; i < adapter.getCount(); i++) {
+                Button appendBtn = (Button) adapter.getView(i, null, mListView).findViewById(R.id.append_btn);
+                appendBtn.setVisibility(
+                        args.getBoolean(APPEND_BUTTON_VISIBLE, true) ? View.VISIBLE : View.INVISIBLE);
+            }
+        }
         return view;
     }
 
