@@ -20,7 +20,6 @@ public class RegisteredGroupsActivity extends AppCompatActivity {
 
     private ViewPager pager;
     private TabLayout tabs;
-
     private Button backBtn;
 
     @Override

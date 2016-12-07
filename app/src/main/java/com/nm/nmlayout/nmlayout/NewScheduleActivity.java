@@ -8,7 +8,7 @@ public class NewScheduleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_schedule);
+        setContentView(R.layout.activity_edit_schedule);
         setTitle("New Schedule");
     }
 }
