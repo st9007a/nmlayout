@@ -1,27 +1,48 @@
 package com.nm.nmlayout.nmlayout;
 
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.LayoutParams;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+public class AppendToGroupsActivity extends AppCompatActivity {
 
-public class SelectGroupActivity extends AppCompatActivity {
+    private Button cancelBtn;
+    private Button saveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_group);
+        setContentView(R.layout.activity_append_to_groups);
         setupActionBar();
+
+        cancelBtn = (Button)findViewById(R.id.cancel_btn);
+        saveBtn = (Button)findViewById(R.id.save_btn);
+
+        cancelBtn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(AppendToGroupsActivity.this, HistoryActivity.class);
+                startActivity(intent);
+                AppendToGroupsActivity.this.finish();
+            }
+        });
+
+        saveBtn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(AppendToGroupsActivity.this, HistoryActivity.class);
+                startActivity(intent);
+                AppendToGroupsActivity.this.finish();
+            }
+        });
 
     }
 

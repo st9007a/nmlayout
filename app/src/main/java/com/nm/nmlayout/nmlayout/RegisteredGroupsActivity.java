@@ -1,5 +1,6 @@
 package com.nm.nmlayout.nmlayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -21,6 +23,8 @@ public class RegisteredGroupsActivity extends AppCompatActivity {
     private ViewPager pager;
     private TabLayout tabs;
     private Button backBtn;
+
+    private boolean isInitial = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +67,31 @@ public class RegisteredGroupsActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> dropdownList = ArrayAdapter.createFromResource(RegisteredGroupsActivity.this,
                 R.array.registered_groups_dropdown,
                 android.R.layout.simple_spinner_dropdown_item);
+
+        //setup dropdown
         spinner.setAdapter(dropdownList);
+        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+
+                if(isInitial) {
+                    Intent intent = new Intent();
+                    intent.setClass(RegisteredGroupsActivity.this, EditGroupActivity.class);
+                    startActivity(intent);
+                    RegisteredGroupsActivity.this.finish();
+                }
+
+                isInitial = true;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
         actionBar.setCustomView(customNav, lp1);
     }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
 

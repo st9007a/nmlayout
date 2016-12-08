@@ -44,6 +44,15 @@ public class SchedulePoliciesActivity extends AppCompatActivity {
         View customNav = LayoutInflater.from(this).inflate(R.layout.component_button_action_bar, null);
 
         ((TextView)customNav.findViewById(R.id.action_bar_title)).setText("Schedule Policies");
+        ((Button)customNav.findViewById(R.id.add_btn)).setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(SchedulePoliciesActivity.this, EditScheduleActivity.class);
+                startActivity(intent);
+                SchedulePoliciesActivity.this.finish();
+            }
+        });
 
         actionBar.setCustomView(customNav, lp1);
     }

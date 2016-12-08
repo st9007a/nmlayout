@@ -9,6 +9,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string-array name="registered_groups_dropdown">
+        <item>Select One</item>
         <item>New App Group</item>
         <item>New Notification Group</item>
     </string-array>

@@ -11,18 +11,17 @@
         <activity android:name=".DebugActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".BlockedNotificationsActivity">
-
-        </activity>
-        <activity android:name=".SelectGroupActivity" />
-        <activity android:name=".SchedulePoliciesActivity" />
-        <activity android:name=".NewScheduleActivity" />
-        <activity android:name=".RegisteredGroupsActivity"></activity>
-        <activity android:name=".EditScheduleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AppendToGroupsActivity" />
+        <activity android:name=".SchedulePoliciesActivity" />
+        <activity android:name=".NewScheduleActivity" />
+        <activity android:name=".RegisteredGroupsActivity" />
+        <activity android:name=".EditScheduleActivity"></activity>
+        <activity android:name=".EditGroupActivity"></activity>
     </application>
 
 </manifest>
